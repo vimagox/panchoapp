@@ -433,8 +433,8 @@ module.exports = function (grunt) {
       ],
       server: [
         'newer:babel:client',
-        'jade',
-        'sass',
+        'jade'
+        // 'sass',
       ],
       test: [
         'newer:babel:client',
