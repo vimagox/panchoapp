@@ -591,7 +591,8 @@ module.exports = function (grunt) {
     sass: {
       server: {
         options: {
-          compass: false
+          compass: false,
+          // style: 'compressed'
         },
         files: {
           '.tmp/app/app.css' : '<%= yeoman.client %>/app/app.scss'
