@@ -64,13 +64,13 @@ body::after {
   transition: opacity .3s 0s, visibility 0s .3s;
 }
 
-body.cd-overlay::after {
-  visibility: visible;
-  opacity: 1;
-  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
-  -moz-transition: opacity .3s 0s, visibility 0s 0s;
-  transition: opacity .3s 0s, visibility 0s 0s;
-}
+// body.cd-overlay::after {
+//   visibility: visible;
+//   opacity: 1;
+//   -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+//   -moz-transition: opacity .3s 0s, visibility 0s 0s;
+//   transition: opacity .3s 0s, visibility 0s 0s;
+// }
 
 @media only screen and (min-width: 768px) {
   body::after {
