@@ -21,9 +21,13 @@
 //
 // // Component styles are injected through grunt
 // // injector
-// @import 'main/main.scss';
-// @import '../components/footer/footer.scss';
-// // endinjector
+ @import 'main/main.scss';
+ @import '../components/footer/footer.scss';
+ // endinjector
+
+ body {
+   font-family: 'Source Sans Pro', sans-serif;
+ }
 //
 //
 //

@@ -1,18 +1,12 @@
-navbar
+.simon(style="background-color:#000;color:#fff;max-width:16em;margin:5em auto;")
 
-header#banner.hero-unit
-  .container
-    h1 'Allo, 'Allo!
-    p.lead Kick-start your next web app with Angular Fullstack
-    img(src='assets/images/yeoman.png', alt='I\'m Yeoman')
+  header#banner.hero-unit(style="background-color:#191919;border:1px solid #262626;border-radius:6px;")
+    .container(style="xborder:1px solid white;")
+      img(src='assets/images/pancho.png', alt='Soy Pancho', style="height:8em;")
+      h1(style="color:#000;margin:0;font-family: 'Comfortaa', cursive;") pancho
+      p.lead(style="text-transform:uppercase;padding-top:.5em;margin-bottom:0;line-height:1.5em;color:#fff;") Evalua tu gobierno<br><span style="color:#00c176">municipal</span> estatal <span style="color:#ff003c">federal</span>
 
-.container
-  .row
-    .col-lg-12
-      h1.page-header Features:
-      ul.nav.nav-tabs.nav-stacked.col-md-4.col-lg-4.col-sm-6(ng-repeat='thing in main.awesomeThings')
-        li
-          a(href='#', tooltip='{{thing.info}}')
-            | {{thing.name}}
-
-footer
+  .simon(style="color:#333;text-align:center;")
+    p &copy; Copyright
+      a(href='http://1910.io', style="padding-left:.25em;color:#999;text-decoration:none;") 1910.io
+  #footer(style="border:none;")
