@@ -1,12 +1,17 @@
 'use strict';
 
-angular.module('xApp')
-  .config(function($stateProvider) {
-    $stateProvider
-      .state('main', {
+angular.module('xApp.main', ['ui.router'])
+.config(['$stateProvider', function($stateProvider) {
+  $stateProvider
+    .state('main', {
         url: '/',
         templateUrl: 'app/main/main.html',
-        controller: 'MainController',
+        controller: 'MainCtrl',
         controllerAs: 'main'
-      });
-  });
+    });
+}])
+.controller('MainCtrl', ['$scope',
+  function ($scope) {
+
+  }
+]);

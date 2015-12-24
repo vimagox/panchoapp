@@ -1,15 +1,19 @@
 'use strict';
 
 angular.module('xApp', [
-  'xApp.constants',
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
-  'ui.router'
+    'xApp.main',
+    'xApp.home',
+    'xApp.constants',
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
+    'ui.router'
 ])
-  .config(function($urlRouterProvider, $locationProvider) {
+.config(['$urlRouterProvider', '$locationProvider',
+  function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider
-      .otherwise('/');
+        .otherwise('/');
 
     $locationProvider.html5Mode(true);
-  });
+  }
+]);

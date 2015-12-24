@@ -1,0 +1,22 @@
+i.fa.fa-bars.fa-2x.fsm-menu-button-open(style="position:fixed;top:.25em;right:.25em;color:#fff;", ng-init="toggleMenu=false", ng-click="toggleMenu=!toggleMenu")
+
+.left-nav(ng-show="toggleMenu")
+  ul
+    li
+      i.fa.fa-circle Entra a tu cuenta
+    li
+      i.fa.fa-circle-thin Registra tu cuenta
+    li
+      i.fa.fa-search Explora tu municipio
+    li
+      i.fa.fa-mail-forward
+      Envianos tus sugerencias
+
+
+.simon(style="color:#333;position:fixed;bottom:1em;width:100%;")
+  .x(style="text-align:center;color:#555") &copy; Copyright
+    a(href='http://1910.io', style="padding-left:.25em;color:#fff;text-decoration:none;") 1910.io
+
+
+a(href="/mx")
+  <i class="fa fa-2x fa-arrow-down" style="color:white;position:fixed;bottom:.25em;left:45%"></i>

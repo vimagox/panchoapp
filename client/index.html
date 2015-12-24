@@ -23,7 +23,7 @@
 
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <link href='https://fonts.googleapis.com/css?family=Comfortaa:700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
@@ -52,13 +52,36 @@
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
-  <body ng-app="xApp" style="margin:0;background-color:#000;1e2022;">
+  <body ng-app="xApp" style="margin:0;background-color:#000;1e2022;height:100%;">
     <!--[if lt IE 7]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div ui-view="" xstyle="border:1px solid red;"></div>
+    <div style="max-width:800px;margin:0 auto;text-align:center;">
+      <div ui-view="" style=""></div>
+
+      <div class="xmenu">
+        <ul>
+          <li>
+            <i class="fa fa-2x fa-building-o"></i>
+            <div><span>Gobiernos</span></div>
+          </li>
+          <li>
+            <i class="fa fa-2x fa-lightbulb-o"></i>
+            <div><span>Sugerencias</span></div>
+          </li>
+          <li>
+            <i class="fa fa-2x fa-comments-o"></i>
+            <div><span>Foros</span></div>
+          </li>
+          <li>
+            <i class="fa fa-2x fa-bar-chart-o"></i>
+            <div><span>Estadisticas</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -90,7 +113,7 @@
       <!-- injector:js -->
       <script src="components/util/util.module.js"></script>
       <script src="app/app.constant.js"></script>
-      <script src="app/main/main.controller.js"></script>
+      <script src="app/home/home.js"></script>
       <script src="app/main/main.js"></script>
       <script src="components/footer/footer.directive.js"></script>
       <script src="components/navbar/navbar.controller.js"></script>

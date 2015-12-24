@@ -1,0 +1,70 @@
+.fsm-dashboard
+	.fsm-header
+		<div fsm-menu-button >
+			i.fa.fa-bars.fa-2x.fsm-menu-button-open
+			i.fa.fa-arrow-left.fa-2x.fsm-menu-button-closed
+	.fsm-menu
+		Menu
+		ul
+		  li Menu Item
+
+.menu-wrap
+  .dividewhite4
+    nav.menu
+      ul.icon-list
+        li.menu-item
+          a(href="#home")
+            i.fa.fa-fw.fa-star-o
+            span Page top
+        li.menu-item
+          a(href="#services")
+            i.fa.fa-fw.fa-bell-o
+            span Services
+        li.menu-item
+          a(href="#features")
+            i.fa.fa-fw.fa-envelope-o
+            span Features
+        li.menu-item
+          a(href="#pricing")
+            i.fa.fa-fw.fa-comment-o
+            span Prices
+        li.menu-item
+          a(href="#team")
+            i.fa.fa-fw.fa-bar-chart-o
+            span Team
+        li.menu-item
+          a(href="#shop")
+            i.fa.fa-fw.fa-shopping-cart
+            span Shop
+        li.menu-item
+          a(href="#portfolio")
+            i.fa.fa-fw.fa-recycle
+            span Bedroom Sets
+        li.menu-item
+          a(href="#feedback")
+            i.fa.fa-fw.fa-feed
+            span Feedback
+    #close-button.close-button.nav-icon2
+
+
+.content-wrap
+  header#header-wrapper-mp.head-overlay.sticky-menu-light
+    .sticky-header.header-light.sticky-overlay.nobg(role="navigation")
+         .container mp-nav
+            nav#main-menu.site-navigation.primary-navigation
+              ul#example.sf-menu.clearfix
+                li.m-desktop.menu-item
+                  a(href="#home") Page top
+                li.m-desktop.menu-item
+                  a(href="#services") Services
+                li.m-desktop.menu-item
+                  a(href="#features") Features
+                li.m-desktop.menu-item
+                  a(href="#team") Team
+                li.m-desktop.menu-item
+                  a(href="#portfolio") Portfolio
+                li.m-desktop.menu-item
+                  a(href="#!") Buy
+                li
+                  #open-button.menu-button.nav-icon
+                    <div></div>
