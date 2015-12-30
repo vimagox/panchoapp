@@ -13,6 +13,6 @@ angular.module('xApp.govs', ['ui.router'])
 }])
 .controller('FederalCtrl', ['$scope',
   function ($scope) {
-
+    $scope.settings = { borderColor:'red' };
   }
 ]);

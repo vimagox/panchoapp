@@ -14,6 +14,7 @@ angular.module('xApp.app', ['ui.router'])
   function ($scope, $state, $location, $window) {
     $scope.location = $location;
     $scope.date = new Date();
+    $scope.settings = {borderColor:''};
 
     $scope.reloadRoute = function() {
       $state.go($state.current, {}, {reload: true});

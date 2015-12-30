@@ -1,7 +1,8 @@
 <div style="max-width:800px;margin:0 auto;text-align:center;">
+  <div class="top-line"></div>
   <div ui-view="" style=""></div>
 
-  <div class="xmenu">
+  <div class="xmenu" style="border-top:3px solid {{borderColor}};">
     <ul>
       <li ui-sref="govs" ng-class="{active: location.path()==='/gobiernos'}">
         <i class="fa fa-2x fa-building-o"></i>
