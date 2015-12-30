@@ -48,6 +48,6 @@
  }
 
  .top-line {
-   @include linear-gradient(#666, #000);
-   height:1.5em;
+   @include linear-gradient(#333, #000);
+  //  height:3em;
  }

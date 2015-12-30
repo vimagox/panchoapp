@@ -14,5 +14,12 @@ angular.module('xApp.govs', ['ui.router'])
 .controller('FederalCtrl', ['$scope',
   function ($scope) {
     $scope.settings = { borderColor:'red' };
+
+    $scope.states = ["Aguascalientes", "Baja California", "Baja California Sur",
+    "Campeche", "Chiapas", "Chihuahua", "Coahuila", "Colima", "Durango",
+    "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "México", "Michoacán",
+    "Morelos", "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Querétaro",
+    "Quintana Roo", "San Luis Potosí", "Sinaloa", "Sonora", "Tabasco",
+    "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas"];
   }
 ]);

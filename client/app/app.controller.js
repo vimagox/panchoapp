@@ -30,7 +30,6 @@ angular.module('xApp.app', ['ui.router'])
     };
 
     $scope.$watch($scope.getWindowSize, function(newValue) {
-      console.log(newValue.h);
       $scope.windowHeight = newValue.h;
       $scope.windowWidth = newValue.w;
     }, true);
