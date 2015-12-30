@@ -21,8 +21,12 @@
 //
 // // Component styles are injected through grunt
 // // injector
+ @import 'forums/forums.scss';
+ @import 'govs/govs.scss';
  @import 'home/home.scss';
  @import 'main/main.scss';
+ @import 'stats/stats.scss';
+ @import 'suggestions/suggestions.scss';
  @import '../components/footer/footer.scss';
  // endinjector
 

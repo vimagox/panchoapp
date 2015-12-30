@@ -1,0 +1,69 @@
+#federal{
+  margin:0;
+  padding:0;
+  background-color: white;
+  color: #222;
+  height:100%;
+
+  .top {
+    margin:1em;
+    .left {
+      border:1px solid #eee;
+      height:5em;
+      background-color: #888;
+      color:#fff;
+      border-radius:4px;
+      // padding:0;
+      // margin:0 0 0 1em;
+      .grade {
+        font-size: 5em;
+        letter-spacing: -2px;
+        padding:0;
+        margin-left:-9px;
+        margin-top:-20px;
+      }
+    }
+    .right {
+      // border:1px solid red;
+      // background-color: #ddd;
+      border-radius:4px;
+      padding-left:1em;
+      height:5em;
+      .president {
+        color:#222;
+        font-size:1.1em;
+        font-weight: bold;
+        padding-top:.35em;
+      }
+      .period{
+        color:#888;
+      }
+      .panchos {
+        color:#888;
+      }
+    }
+  }
+
+  .table {
+    text-align: center;
+    .date {
+      font-size:1em;
+      border-bottom:1px solid #222;
+      text-align: center;
+      // height:3em;
+    }
+    .panchos {
+      font-size:1em;
+      border-bottom:1px solid #222;
+      // height:3em;
+    }
+    .avg {
+      font-size:1em;
+      color:red;
+      border-bottom:1px solid #222;
+      // width:2em;
+      // height:3em;\
+      margin-bottom:0;
+    }
+  }
+}

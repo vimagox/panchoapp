@@ -1,8 +1,13 @@
 'use strict';
 
 angular.module('xApp', [
+    'xApp.app',
     'xApp.main',
     'xApp.home',
+    'xApp.govs',
+    'xApp.forums',
+    'xApp.stats',
+    'xApp.suggestions',
     'xApp.constants',
     'ngCookies',
     'ngResource',

@@ -5,6 +5,7 @@ angular.module('xApp.main', ['ui.router'])
   $stateProvider
     .state('main', {
         url: '/',
+        parent: 'app',
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'

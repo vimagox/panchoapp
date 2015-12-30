@@ -5,6 +5,7 @@ angular.module('xApp.home', ['ui.router'])
   $stateProvider
     .state('home', {
       url: '/mx',
+      parent: 'app',
       templateUrl: 'app/home/home.html',
       controller: 'HomeCtrl',
       controllerAs: 'home'
