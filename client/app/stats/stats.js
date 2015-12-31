@@ -4,7 +4,7 @@ angular.module('xApp.stats', ['ui.router'])
 .config(['$stateProvider', function($stateProvider) {
   $stateProvider
     .state('stats', {
-        url: '/estadisticas',
+        url: 'estadisticas',
         parent: 'app',
         templateUrl: 'app/stats/stats.html',
         controller: 'StatsCtrl',

@@ -1,15 +1,25 @@
-<div id="federal" style="height:{{windowHeight-56}}px;border-bottom:3px solid red;margin-bottom:4.75em;">
-  <ul class="govs accordion">
+<div id="federal" ng-init="govsmenu=false" style="height:{{windowHeight-56}}px;border-bottom:3px solid red;margin-bottom:4.75em;">
+  <div class="govs-header accordion" style="padding:0;margin:0;">
+    <span>pancho</span>
+    <i class="fa fa-bars fa-1x" ng-click="govsmenu=!govsmenu"></i>
+  </div>
+  <div ng-show="govsmenu" class="govs-header-menu" style="width:100%;height:{{windowHeight}}px;background-color:#080808;">
+  </div>
+  <div ng-hide="govsmenu" class="govs-subheader" style="xmargin-top:3em;height:3em;display:block;">
+    <div style="float:left;margin-left:.6em;">GOBIERNOS</div>
+    <div style="float:right;padding-right:.6em;">CALIFICACION</div>
+  </div>
+  <ul ng-hide="govsmenu" class="govs accordion">
     <li id="gov{{state.id}}" ng-repeat="state in states" class="js-accordion-trigger">
-      <div ng-click="viewGov(state.id)" ng-hide="govSelected === state.id"><img src="assets/images/{{state.party}}.png"> {{state.name}}</div>
-      <div ng-click="viewGov(state.id)" ng-show="govSelected === state.id" class="xstate-head"> {{state.name}}</div>
+      <div style="cursor:pointer" ng-click="viewGov(state.id)" ng-hide="govSelected === state.id"><img src="assets/images/{{state.party}}.png"> {{state.name}}</div>
+      <div style="cursor:pointer" ng-click="viewGov(state.id)" ng-show="govSelected === state.id" class="xstate-head"> {{state.name}}</div>
       <div class="fa fa-1x fa-caret-right" ng-hide="govSelected === state.id"></div>
       <div class="fa fa-1x fa-caret-down" style="padding-top:0px;" ng-show="govSelected === state.id"></div>
       <div ng-hide="govSelected === state.id" class="grade">0.0</div>
-      <ul ng-show="govSelected === state.id" class="submenu" style="background-color:#fff;height:{{windowHeight-80}}px;">
+      <ul ng-show="govSelected === state.id" class="submenu" style="background-color:#fff;height:{{windowHeight-50}}px;">
           <div class="xstate" style="margin:0;padding:0;text-align:center;margin-top:-1em;">
             <div>
-              <img src="assets/images/{{xstate.party}}.png" style="width:3.5em;">
+              <img src="assets/images/{{xstate.party}}.png" style="width:3.25em;">
             </div>
             <div class="vato" style="color:#333;padding-top:.25em;">{{xstate.vato}}</div>
             <div style="color:#bbb">{{xstate.period}}</div>
@@ -19,27 +29,31 @@
             </div>
             <div class="row xoption">
               <div class="col-xs-6">
-                <div class="xitem">
+                <div class="xitem" ui-sref="suggestions">
                   <span>0</span><br>
                   <div class="xlabel">Sugerencias</div>
                 </div>
               </div>
               <div class="col-xs-6">
-                <div class="xitem">
+                <div class="xitem" ui-sref="complaints">
                   <span>0</span><br>
-                  <div class="xlabel">Foros</div>
+                  <div class="xlabel">Quejas</div>
                 </div>
               </div>
             </div>
             <div class="row xoption">
               <div class="col-xs-6">
-                <div class="xitem">
+                <div class="xitem" ui-sref="forums">
                   <span>0</span><br>
-                  <div class="xlabel">Municipios</div>
+                  <div class="xlabel">Foros</div>
                 </div>
               </div>
               <div class="col-xs-6">
-                <div class="xitem">
+                <div class="xitem" ng-show="xstate.id>0" ui-sref="municipios">
+                  <span>0</span><br>
+                  <div class="xlabel">Municipios</div>
+                </div>
+                <div class="xitem" ng-show="xstate.id===0" ui-sref="stats">
                   <span>0</span><br>
                   <div class="xlabel">Estadisticas</div>
                 </div>
@@ -64,8 +78,8 @@
       </ul>
     </li>
   </ul>
-  <div style="height:{{windowHeight-10}}px;background-color:#000;color:#fff;">
-    <h3 style="font-family: 'Comfortaa', cursive;color:#fff;">pancho.mx</h3>
+  <!-- <div style="height:{{windowHeight}}px;background-color:#111;color:#fff;"> -->
+    <!-- <h3 style="font-family: 'Comfortaa', cursive;color:#fff;">pancho.mx</h3>
     <div style="padding-top:.25em;text-align:center;margin:0 auto;">
       <p style="border-bottom:1px solid #fff;width:10em;text-align:center;">Registrate y participa:<p>
       <div class="xidea"><i class="fa fa-circle"/>Evalua tus Gobiernos.</div>
@@ -73,6 +87,6 @@
       <div class="xidea"><i class="fa fa-circle"/>Opina en temas relevantes a tu comunidad.</div>
       <br><br>
       <p>Envianos tus ideas ó sugerencias para mejorar nuestro servicio.</p>
-    </div>
-  </div>
+    </div> -->
+  <!-- </div> -->
 </div>

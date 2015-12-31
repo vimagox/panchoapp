@@ -20,6 +20,7 @@ angular.module('xApp.app', ['ui.router'])
       var newHash = x;
       if ($location.hash() !== newHash) {
         $location.hash(x);
+        $anchorScroll.yOffset = 41;
       } else {
         $anchorScroll();
       }

@@ -4,7 +4,7 @@ angular.module('xApp.forums', ['ui.router'])
 .config(['$stateProvider', function($stateProvider) {
   $stateProvider
     .state('forums', {
-        url: '/foros',
+        url: 'foros',
         parent: 'app',
         templateUrl: 'app/forums/forums.html',
         controller: 'ForumsCtrl',

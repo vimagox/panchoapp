@@ -3,8 +3,8 @@
 angular.module('xApp', [
     'xApp.storage',
     'xApp.app',
-    'xApp.main',
-    'xApp.home',
+    // 'xApp.main',
+    // 'xApp.home',
     'xApp.govs',
     'xApp.forums',
     'xApp.stats',

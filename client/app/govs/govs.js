@@ -4,7 +4,7 @@ angular.module('xApp.govs', ['ui.router'])
 .config(['$stateProvider', function($stateProvider) {
   $stateProvider
     .state('govs', {
-        url: '/gobiernos',
+        url: '/',
         parent: 'app',
         templateUrl: 'app/govs/govs.html',
         controller: 'FederalCtrl',
@@ -28,6 +28,11 @@ angular.module('xApp.govs', ['ui.router'])
       xStorage.put('xstate', $scope.states[stateId]);
       $state.go('xstate');
     };
+
+    // $scope.viewMenu = function() {
+    //   angular.element('.govs-header-menu').slideToggle('fast');
+    //   angular.element('.govs-header-menu').toggleClass('is-expanded');
+    // };
 
     $scope.viewGov = function(stateId) {
       $scope.xstate = $scope.states[stateId];
