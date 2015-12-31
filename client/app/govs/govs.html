@@ -1,12 +1,75 @@
 <div id="federal" style="height:{{windowHeight-56}}px;border-bottom:3px solid red;margin-bottom:4.75em;">
-  <div class="state"style="background-color:red;color:white;" >
-    <div>Gobierno Federal</div>
-    <div class="fa fa-1x fa-caret-right" style="color:#fff;"></div>
-    <div class="grade" style="color:#fff;">0.0</div>
-  </div>
-  <div ng-repeat="state in states" class="state">
-    <div>{{state}}</div>
-    <div class="fa fa-1x fa-caret-right"></div>
-    <div class="grade">0.0</div>
+  <ul class="govs accordion">
+    <li id="gov{{state.id}}" ng-repeat="state in states" class="js-accordion-trigger" ng-click="viewGov(state.id)">
+      <div ng-hide="govSelected === state.id"><img src="assets/images/{{state.party}}.png"> {{state.name}}</div>
+      <div ng-show="govSelected === state.id" style="padding-left:0em;height:2em;font-weight:bold;text-align:center;border-bottom:1px solid #eee;margin:0;"> {{state.name}}</div>
+      <div class="fa fa-1x fa-caret-right" ng-hide="govSelected === state.id"></div>
+      <div class="fa fa-1x fa-caret-down" style="padding-top:0px;" ng-show="govSelected === state.id"></div>
+      <div ng-hide="govSelected === state.id" class="grade">0.0</div>
+      <ul ng-show="govSelected === state.id" class="submenu" style="background-color:#fff;height:{{windowHeight-80}}px;">
+          <div class="xstate" style="margin:0;padding:0;text-align:center;">
+            <div>
+              <img src="assets/images/{{state.party}}.png" style="width:3.5em;">
+            </div>
+            <div class="vato" style="color:#333;padding-top:.25em;">{{xstate.vato}}</div>
+            <div style="color:#bbb">{{xstate.period}}</div>
+            <div class="xgrade" style="margin:1.25em 1.5em 0 1.5em;">
+              <div class="xavg" style="text-align:center;">0.0</div>
+              <div class="panchos"><b>0</b><br>panchos</div>
+            </div>
+            <div class="row xoption">
+              <div class="col-xs-6">
+                <div class="xitem">
+                  <span>0</span><br>
+                  <div class="xlabel">Sugerencias</div>
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <div class="xitem">
+                  <span>0</span><br>
+                  <div class="xlabel">Foros</div>
+                </div>
+              </div>
+            </div>
+            <div class="row xoption">
+              <div class="col-xs-6">
+                <div class="xitem">
+                  <span>0</span><br>
+                  <div class="xlabel">Municipios</div>
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <div class="xitem">
+                  <span>0</span><br>
+                  <div class="xlabel">Estadisticas</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="row xstate">
+            <div class="col-xs-9" style="padding:0;padding-right:2em;">
+              <div class="xinfo" style="margin-top:-1.2em;">
+                <img src="assets/images/{{state.party}}.png" style="width:3.5em;">
+                <div class="vato" style="color:#333;">{{xstate.vato}}</div>
+                <div style="color:#bbb">{{xstate.period}}</div>
+              </div>
+            </div>
+            <div class="col-xs-3" style="padding:0;margin-left:-2em;">
+              <div class="xgrade" style="margin-top:-1em;">
+                <div class="xavg" style="text-align:center;">0.0</div>
+                <div class="panchos"><b>400</b><br>panchos</div>
+              </div>
+            </div>
+          </div> -->
+      </ul>
+    </li>
+  </ul>
+  <div style="height:{{windowHeight-10}}px;background-color:#000;color:#fff;">
+    <h3 style="font-family: 'Comfortaa', cursive;color:#fff;">pancho</h3>
+    <div style="padding-top:.25em;">
+      <p>Registrate con <span style="color:red;font-weight:bold;">pancho.mx</span> y evalua tus gobiernos.</p>
+      <br><br>
+      <p>Envianos tus ideas ó sugerencias para mejorar nuestro servicio.</p>
+    </div>
   </div>
 </div>

@@ -10,11 +10,25 @@ angular.module('xApp.app', ['ui.router'])
         controller: 'AppCtrl'
     });
 }])
-.controller('AppCtrl', ['$scope', '$state', '$location', '$window',
-  function ($scope, $state, $location, $window) {
+.controller('AppCtrl', ['$scope', '$state', '$location', '$window', '$anchorScroll',
+  function ($scope, $state, $location, $window, $anchorScroll) {
     $scope.location = $location;
     $scope.date = new Date();
     $scope.settings = {borderColor:''};
+
+    $scope.gotoAnchor = function(x) {
+      console.log(x);
+      var newHash = x;
+      if ($location.hash() !== newHash) {
+        // set the $location.hash to `newHash` and
+        // $anchorScroll will automatically scroll to it
+        $location.hash(x);
+      } else {
+        // call $anchorScroll() explicitly,
+        // since $location.hash hasn't changed
+        $anchorScroll();
+      }
+    };
 
     $scope.reloadRoute = function() {
       $state.go($state.current, {}, {reload: true});
