@@ -5,9 +5,20 @@
   color: #222;
   height:100%;
 
+  .xidea {
+    width:20em;
+    margin:.75em auto;
+    text-align: left;
+    color:#aaa;
+    .fa {
+      color:red;
+      padding-right:.5em;
+    }
+  }
   .govs li {
     color:#444;
     border-bottom:1px solid #eee;
+    font-size: 1.25em;
     .grade {
       color:#aaa;
     }
@@ -24,11 +35,19 @@
         color:#444;
       }
     }
+    .xstate-head {
+      padding-left:0em;
+      height:2em;
+      font-weight:bold;
+      text-align:center;
+      border-bottom:1px solid #eee;
+      margin:0;
+    }
   }
   .govs li:first-child {
     background-color:red;
     color:#fff;
-    border-bottom:1px solid red;
+    border:none;
     .grade {
       color:#fff;
     }
@@ -44,6 +63,9 @@
     .submenu {
       margin:0 -.5em;
     }
+    .xstate-head {
+      border-bottom: none;
+    }
   }
 
   .govs .grade:first-child {
@@ -53,8 +75,7 @@
   .xstate {
     padding:.7em 2em;
     .xgrade {
-      // height:5.5em;
-      font-size:1.25em;
+      font-size:.75em;
       text-align:center;
       background-color: #222;
       border-radius:6px;
@@ -106,6 +127,7 @@
           .xlabel {
             margin-top:-.5em;
             padding-bottom:.5em;
+            font-size: .75em;
           }
         }
       }
@@ -127,8 +149,6 @@
     float:right;
     margin-right:.75em;
     font-size: 1.2em;
-    // background-color:#555;
-    // color:#888;
     padding:0 .5em;
     border-radius: 2em;
     margin-top:-1.3em;
@@ -152,45 +172,45 @@
     margin-top:-1.8em;
   }
 
-  .top {
-    margin:1em;
-    .left {
-      border:1px solid #eee;
-      height:5em;
-      background-color: #888;
-      color:#fff;
-      border-radius:4px;
-      // padding:0;
-      // margin:0 0 0 1em;
-      .grade {
-        font-size: 5em;
-        letter-spacing: -2px;
-        padding:0;
-        margin-left:-9px;
-        margin-top:-20px;
-      }
-    }
-    .right {
-      // border:1px solid red;
-      // background-color: #ddd;
-      border-radius:4px;
-      padding-left:1em;
-      height:5em;
-      .president {
-        color:#222;
-        font-size:1.1em;
-        font-weight: bold;
-        padding-top:.35em;
-      }
-      .period{
-        color:#888;
-      }
-      .panchos {
-        color:#888;
-        line-height: .5em;
-      }
-    }
-  }
+  // .top {
+  //   margin:1em;
+  //   .left {
+  //     border:1px solid #eee;
+  //     height:5em;
+  //     background-color: #888;
+  //     color:#fff;
+  //     border-radius:4px;
+  //     // padding:0;
+  //     // margin:0 0 0 1em;
+  //     .grade {
+  //       font-size: 5em;
+  //       letter-spacing: -2px;
+  //       padding:0;
+  //       margin-left:-9px;
+  //       margin-top:-20px;
+  //     }
+  //   }
+  //   .right {
+  //     // border:1px solid red;
+  //     // background-color: #ddd;
+  //     border-radius:4px;
+  //     padding-left:1em;
+  //     height:5em;
+  //     .president {
+  //       color:#222;
+  //       font-size:1.1em;
+  //       font-weight: bold;
+  //       padding-top:.35em;
+  //     }
+  //     .period{
+  //       color:#888;
+  //     }
+  //     .panchos {
+  //       color:#888;
+  //       line-height: .5em;
+  //     }
+  //   }
+  // }
 
   // .table {
   //   text-align: center;
