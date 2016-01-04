@@ -3,7 +3,7 @@
 angular.module('xApp', [
     'xApp.storage',
     'xApp.app',
-    // 'xApp.main',
+    'xApp.main',
     // 'xApp.home',
     'xApp.govs',
     'xApp.forums',
