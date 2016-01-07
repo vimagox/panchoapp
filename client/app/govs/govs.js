@@ -7,15 +7,43 @@ angular.module('xApp.govs', ['ui.router'])
         url: '/',
         parent: 'app',
         templateUrl: 'app/govs/govs.html',
-        controller: 'FederalCtrl',
-        controllerAs: 'federal'
+        controller: 'FederalCtrl'
     })
     .state('xstate', {
-        url: '/x',
+        url: '/:xstate',
         parent: 'app',
         templateUrl: 'app/govs/state.html',
-        controller: 'StateCtrl',
-        controllerAs: 'state'
+        controller: 'StateCtrl'
+    })
+    .state('xsuggestions', {
+        url: '/:xstate/sugerencias',
+        parent: 'app',
+        templateUrl: 'app/govs/suggestions.html',
+        controller: 'XSuggestionsCtrl'
+    })
+    .state('xcomplaints', {
+        url: '/:xstate/quejas',
+        parent: 'app',
+        templateUrl: 'app/govs/complaints.html',
+        controller: 'XComplaintsCtrl'
+    })
+    .state('xforums', {
+        url: '/:xstate/foros',
+        parent: 'app',
+        templateUrl: 'app/govs/forums.html',
+        controller: 'XForumsCtrl'
+    })
+    .state('xmunicipios', {
+        url: '/:xstate/municipios',
+        parent: 'app',
+        templateUrl: 'app/govs/municipios.html',
+        controller: 'XMunicipiosCtrl'
+    })
+    .state('xdelegaciones', {
+        url: '/:xstate/delegaciones',
+        parent: 'app',
+        templateUrl: 'app/govs/municipios.html',
+        controller: 'XMunicipiosCtrl'
     });
 }])
 .controller('FederalCtrl', ['$scope', '$state', 'xStorage',
@@ -25,8 +53,9 @@ angular.module('xApp.govs', ['ui.router'])
     $scope.xstate = "";
 
     $scope.loadState = function(stateId) {
-      xStorage.put('xstate', $scope.states[stateId]);
-      $state.go('xstate');
+      var x = $scope.states[stateId];
+      xStorage.put('xstate', x);
+      $state.go('xstate', {xstate: x.uid});
     };
 
     // $scope.viewMenu = function() {
@@ -35,11 +64,12 @@ angular.module('xApp.govs', ['ui.router'])
     // };
 
     $scope.viewGov = function(stateId) {
-      $scope.xstate = $scope.states[stateId];
+      $scope.state = $scope.states[stateId];
       $scope.govSelected = stateId===$scope.govSelected?'':stateId;
       angular.element('#gov'+stateId).find('.submenu').slideToggle('fast');
       angular.element('#gov'+stateId).toggleClass('is-expanded');
       $scope.gotoAnchor('gov'+stateId);
+      $state.go('govs');
     }
 
     $scope.states = [
@@ -79,7 +109,34 @@ angular.module('xApp.govs', ['ui.router'])
     ];
   }
 ])
-.controller('StateCtrl', ['$scope', '$state', 'xStorage',
+.controller('StateCtrl', ['$scope', '$state', 'xStorage', '$stateParams',
+  function ($scope, $state, xStorage, $stateParams) {
+    $scope.xstate = xStorage.get('xstate');
+
+    $scope.viewGov = function(stateId) {
+      // angular.element('#gov'+stateId).find('.submenu').slideToggle('fast');
+      // angular.element('#gov'+stateId).toggleClass('is-expanded');
+      $state.go('govs');
+      $scope.gotoAnchor('gov'+stateId);
+    }
+  }
+])
+.controller('XSuggestionsCtrl', ['$scope', '$state', 'xStorage',
+  function ($scope, $state, xStorage) {
+    $scope.xstate = xStorage.get('xstate');
+  }
+])
+.controller('XComplaintsCtrl', ['$scope', '$state', 'xStorage',
+  function ($scope, $state, xStorage) {
+    $scope.xstate = xStorage.get('xstate');
+  }
+])
+.controller('XForumsCtrl', ['$scope', '$state', 'xStorage',
+  function ($scope, $state, xStorage) {
+    $scope.xstate = xStorage.get('xstate');
+  }
+])
+.controller('XMunicipiosCtrl', ['$scope', '$state', 'xStorage',
   function ($scope, $state, xStorage) {
     $scope.xstate = xStorage.get('xstate');
   }

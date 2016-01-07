@@ -52,3 +52,16 @@
    @include linear-gradient(#333, #000);
   //  height:3em;
  }
+
+ #app {
+   ul {
+     list-style-type: none;
+     li {
+       float:right;
+       color:#fff;
+       line-height: 3em;
+       padding-right:1em;
+       cursor:pointer;
+     }
+   }
+ }

@@ -1,3 +1,27 @@
+.pan {
+  background-color:#06338E;
+  color:#fff;
+}
+.pri {
+  background-color:#D23026;
+  color:#fff;
+}
+.prd {
+  background-color:#f7cf00;
+  color:#222;
+}
+.pop {
+  background-color:#F04C23;
+  color:#fff;
+}
+.pvem {
+  background-color: #00923F;
+  color:#fff;
+}
+.ind {
+  background-color:#000;
+  color:#fff;
+}
 #federal{
   margin:0;
   padding:0;
@@ -5,6 +29,17 @@
   color: #222;
   height:100%;
   position:relative;
+
+  .xitems {
+    margin-top:1em;
+    border-top:1px solid #ddd;
+    .xitem {
+      position:relative;
+      cursor:pointer;
+      text-align:left;
+      border-bottom:1px solid #ddd;
+    }
+  }
 
   .govs-header {
     position:fixed;
@@ -82,13 +117,16 @@
     }
   }
   .govs li:first-child {
-    background-color:#00c176;
+    background-color:#444;//00c176;
     color:#fff;
     border:none;
     .grade {
       color:#fff;
     }
-    .fa-caret-right, .fa-caret-down {
+    .fa-angle-right, .fa-angle-down {
+      color:#fff;
+    }
+    .fa-angle-right {
       color:#fff;
     }
     .panchos {
@@ -158,6 +196,7 @@
           background-color:#222;
           color:#999;
           border-radius: 6px;
+          cursor:pointer;
           span {
             color:#fff;
           }
@@ -168,6 +207,7 @@
           }
           &:hover {
             background-color: #999;
+            color:#222;
           }
         }
       }
@@ -194,21 +234,20 @@
     margin-top:-1.3em;
   }
 
-  .fa-caret-left {
-    color:red;
+  .fa-angle-left {
+    color:#222;
     float:left;
-    padding-top:.7em;
-    padding-right:.5em;
+    padding:.5em;
   }
 
-  .fa-caret-right, .fa-caret-down {
+  .fa-angle-right {
     float:right;
     color:#222;
     margin-top:-1.15em;
     padding-right:0;
   }
 
-  .fa-caret-down {
+  .fa-angle-down {
     margin-top:-1.8em;
   }
 }

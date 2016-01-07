@@ -1,62 +1,99 @@
-<div id="federal" ng-init="govsmenu=false" style="height:{{windowHeight-56}}px;border-bottom:3px solid red;margin-bottom:4.75em;">
-  <div class="govs-header accordion" style="padding:0;margin:0;">
-    <span>pancho</span>
-    <i class="fa fa-bars fa-1x" ng-click="govsmenu=!govsmenu"></i>
+<div id="federal" ng-init="xstate.messages=''">
+  <div style="position:relative;" class="{{xstate.party}}">
+    <div class="fa fa-1x fa-angle-left" style="position:absolute;left:.5em;top:.1em;font-weight:bold;color:{{xstate.party==='prd'? '#000': '#fff'}};"></div>
+    <div style="cursor:pointer;width:100%;text-align:center;position:relative;font-size:1.25em;line-height:1.25em;padding:.25em 0;font-weight:bold;" ng-click="viewGov(xstate.id)" class="xstate-head">{{xstate.name}}</div>
   </div>
-  <div ng-show="govsmenu" class="govs-header-menu" style="width:100%;height:{{windowHeight}}px;background-color:#080808;">
-  </div>
-  <ul ng-hide="govsmenu" class="govs accordion">
-    <li id="gov{{xstate.id}}" class="js-accordion-trigger">
-      <div style="cursor:pointer" ng-click="viewGov(xstate.id)" ng-hide="govSelected === state.id"><img src="assets/images/{{state.party}}.png"> {{state.name}}</div>
-      <div style="cursor:pointer" ng-click="viewGov(xstate.id)" ng-show="govSelected === state.id" class="xstate-head"> {{state.name}}</div>
-      <div class="fa fa-1x fa-caret-right" ng-hide="govSelected === state.id"></div>
-      <div class="fa fa-1x fa-caret-down" style="padding-top:0px;" ng-show="govSelected === state.id"></div>
-      <div ng-hide="govSelected === state.id" class="grade">0.0</div>
-      <ul ng-show="govSelected === state.id" class="submenu" style="background-color:#fff;height:{{windowHeight-50}}px;">
-          <div class="xstate" style="margin:0;padding:0;text-align:center;margin-top:-1em;">
-            <div>
-              <img src="assets/images/{{xstate.party}}.png" style="width:3.25em;">
-            </div>
-            <div class="vato" style="color:#333;padding-top:.25em;">{{xstate.vato}}</div>
-            <div style="color:#bbb">{{xstate.period}}</div>
-            <div class="xgrade" style="margin:1.25em 2.5em 0 2.5em;">
-              <div class="xavg" style="text-align:center;">0.0</div>
-              <div class="panchos"><b>0</b><br>panchos</div>
-            </div>
-            <div class="row xoption">
-              <div class="col-xs-6">
-                <div class="xitem" ui-sref="suggestions">
-                  <span>0</span><br>
-                  <div class="xlabel">Sugerencias</div>
-                </div>
-              </div>
-              <div class="col-xs-6">
-                <div class="xitem" ui-sref="complaints">
-                  <span>0</span><br>
-                  <div class="xlabel">Quejas</div>
-                </div>
-              </div>
-            </div>
-            <div class="row xoption">
-              <div class="col-xs-6">
-                <div class="xitem" ui-sref="forums">
-                  <span>0</span><br>
-                  <div class="xlabel">Foros</div>
-                </div>
-              </div>
-              <div class="col-xs-6">
-                <div class="xitem" ng-show="xstate.id>0" ui-sref="municipios">
-                  <span>0</span><br>
-                  <div class="xlabel">Municipios</div>
-                </div>
-                <div class="xitem" ng-show="xstate.id===0" ui-sref="stats">
-                  <span>0</span><br>
-                  <div class="xlabel">Estadisticas</div>
-                </div>
-              </div>
-            </div>
+  <div style="height:{{windowHeight-31}}px;">
+    <ul class="submenu" style="background-color:#fff;margin:0;padding:1em 0 0 0;">
+      <div class="xstate" style="margin:0;padding:0;text-align:center;padding-top:1em;">
+        <div>
+          <img src="assets/images/{{xstate.party}}.png" style="width:3.25em;">
+        </div>
+        <div class="vato" style="color:#333;padding-top:.25em;">{{xstate.vato}}</div>
+        <div style="color:#bbb">{{xstate.period}}</div>
+
+        <div ng-hide="xstate.messages.length>0" class="xgrade" style="margin:1.25em 2.5em 0 2.5em;background-color:#fff;color:#999;font-size:1em;">
+          <div class="xavg" style="text-align:center;color:#444;">0.0</div>
+          <div class="panchos"><b>0</b><br>Panchos</div>
+        </div>
+
+        <div class="xitems">
+          <div class="xitem" ui-sref="xsuggestions({xstate: xstate.uid})">
+            <div style="padding:.5em;">Sugerencias</div>
+            <div class="fa fa-1x fa-angle-right" style="margin-top:-1.65em;padding-right:.5em;"></div>
+            <div style="position:absolute;right:2em;top:.5em;color:#444;">0</div>
           </div>
-      </ul>
-    </li>
-  </ul>
+          <div class="xitem" ui-sref="xcomplaints({xstate: xstate.uid})">
+            <div style="padding:.5em;">Quejas</div>
+            <div class="fa fa-1x fa-angle-right" style="margin-top:-1.65em;padding-right:.5em;"></div>
+            <div style="position:absolute;right:2em;top:.5em;color:#444;">0</div>
+          </div>
+          <div class="xitem" ui-sref="xforums({xstate: xstate.uid})">
+            <div style="padding:.5em;">Foros</div>
+            <div class="fa fa-1x fa-angle-right" style="margin-top:-1.65em;padding-right:.5em;"></div>
+            <div style="position:absolute;right:2em;top:.5em;color:#444;">0</div>
+          </div>
+          <div class="xitem" ui-sref="xmunicipios({xstate: xstate.uid})">
+            <div ng-hide="xstate.id===32" ng-click="" style="padding:.5em;">Municipios</div>
+            <div ng-show="xstate.id===32" ng-click="" style="padding:.5em;">Delegaciones</div>
+            <div class="fa fa-1x fa-angle-right" style="margin-top:-1.65em;padding-right:.5em;"></div>
+            <div style="position:absolute;right:2em;top:.5em;color:#444;">0</div>
+          </div>
+        </div>
+      </div>
+    </ul>
+  </div>
 </div>
+
+
+<!-- <div class="row xstate">
+  <div class="col-xs-9" style="padding:0;padding-right:2em;">
+    <div class="xinfo" style="margin-top:-1.2em;">
+      <img src="assets/images/{{state.party}}.png" style="width:3.5em;">
+      <div class="vato" style="color:#333;">{{xstate.vato}}</div>
+      <div style="color:#bbb">{{xstate.period}}</div>
+    </div>
+  </div>
+  <div class="col-xs-3" style="padding:0;margin-left:-2em;">
+    <div class="xgrade" style="margin-top:-1em;">
+      <div class="xavg" style="text-align:center;">0.0</div>
+      <div class="panchos"><b>400</b><br>panchos</div>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- <div ng-hide="xstate.messages.length>0">
+  <div class="row xoption">
+    <div class="col-xs-6">
+      <div class="xitem" ng-click="xstate.messages='suggestions'" xui-sref="suggestions">
+        <span>0</span><br>
+        <div class="xlabel">Sugerencias</div>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="xitem" ng-click="xstate.messages='complaints'" xui-sref="complaints">
+        <span>0</span><br>
+        <div class="xlabel">Quejas</div>
+      </div>
+    </div>
+  </div>
+  <div class="row xoption">
+    <div class="col-xs-6">
+      <div class="xitem" ng-click="xstate.messages='forums'" xui-sref="forums">
+        <span>0</span><br>
+        <div class="xlabel">Foros</div>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="xitem" ng-show="xstate.id>0" xui-sref="municipios"  ng-click="xstate.messages='municipios'">
+        <span>0</span><br>
+        <div class="xlabel">Municipios</div>
+      </div>
+      <div class="xitem" ng-show="xstate.id===0" ui-sref="stats">
+        <span>0</span><br>
+        <div class="xlabel">Estadisticas</div>
+      </div>
+    </div>
+  </div>
+</div> -->

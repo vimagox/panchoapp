@@ -1,0 +1,13 @@
+<div id="federal" ng-init="xstate.messages=''">
+  <div style="position:relative;" class="{{xstate.party}}">
+    <div style="cursor:pointer;width:100%;text-align:center;position:relative;font-size:1.25em;line-height:1.25em;padding:.25em 0;font-weight:bold;" ng-click="viewGov(xstate.id)" class="xstate-head">{{xstate.name}}</div>
+  </div>
+  <div ui-sref="xstate({xstate:xstate.uid})" style="position:relative;background-color:#444;color:#fff;">
+    <div class="fa fa-1x fa-angle-left" style="position:absolute;left:.5em;top:.1em;font-weight:bold;color:{{xstate.party==='prd'? '#000': '#fff'}};"></div>
+    <div style="cursor:pointer;width:100%;text-align:center;position:relative;font-size:1.25em;line-height:1.25em;padding:.25em 0;" ng-click="viewGov(xstate.id)" class="xstate-head">Municipios</div>
+  </div>
+  <div style="height:{{windowHeight-31}}px;">
+    <ul class="submenu" style="background-color:#fff;margin:0;padding:1em 0 0 0;">
+    </ul>
+  </div>
+</div>

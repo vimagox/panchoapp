@@ -1,7 +1,15 @@
-<div ng-init="simon=false" ng-hide="simon" style="max-width:800px;margin:0 auto;text-align:center;position:relative;height:{{windowHeight-75}}px;">
+<div id="app" ng-init="simon=false" ng-hide="simon" style="max-width:800px;margin:0 auto;text-align:center;position:relative;">
+  <div style="height:4em;background-color:#191919;position:fixed;top:0;left:0;width:100%;">
+    <div style="max-width:800px;margin:0 auto;">
+      <ul>
+        <li>Registrate/Login</li>
+        <li ng-click="simon=true">Gobiernos</li>
+      </ul>
+    </div>
+  </div>
   <div class="top-line"></div>
   <!-- <div ng-include="'main/main.html'"></div> -->
-  <div class="xbanner" style="margin-top:6em;">
+  <div class="xbanner" style="margin-top:8em;cursor:pointer;" ng-click="simon=true">
     <header id="banner" class="hero-unit" style="position:relative;background-color:#191919;margin:0;padding:0;border-radius:2em;">
       <div class="xcontainer" style="text-align:center;margin:0;padding:0;padding:.5em 0;">
         <img src="assets/images/panchox.png" alt="Pancho" style="padding:1.25em 2em;height:14em;background-color:#000;border-radius:10em;"/>
@@ -12,10 +20,10 @@
   <div class="xslogan">
     <p class="lead" style="font-size:1em;padding-top:1em;margin-bottom:0;line-height:1.5em;color:#444;letter-spacing:2px;margin:-1.5em 0 -1em 0;"> Evalua tu gobierno</p><br>
     <div class="tres" style="font-weight:bold;font-size:1.5em;margin-top:.2em;">
-      <span class="federal">federal</span> <span class="estatal">estatal</span> <span class="municipal">municipal</span>
+      <span class="federal">municipal</span> <span class="estatal">estatal</span> <span class="municipal">federal</span>
     </div>
   </div>
-  <div ng-click="simon=true" style="cursor:pointer;position:absolute;bottom:1em;color:#fff;width:100%;text-align:center;"><i class="fa fa-2x fa-arrow-down"></i></div>
+  <!-- <div ng-click="simon=true" style="cursor:pointer;position:absolute;bottom:1em;color:#fff;width:100%;text-align:center;"><i class="fa fa-2x fa-arrow-down"></i></div> -->
   <!-- <div class="xmenu" style="border-top:3px solid {{borderColor}};">
     <ul>
       <li ui-sref="govs" ng-class="{active: location.path()==='/gobiernos'}">
@@ -37,4 +45,4 @@
     </ul>
   </div> -->
 </div>
-<div ng-show="simon" ui-view="" style=""></div>
+<div ng-show="simon" ui-view="" style="max-width:800px;margin:0 auto;border-left-radius:6px;border-right-radius:6px;"></div>
