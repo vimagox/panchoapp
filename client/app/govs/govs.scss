@@ -30,14 +30,21 @@
   height:100%;
   position:relative;
 
+  .xstate-header {
+    padding:.4em 0;
+  }
   .xitems {
     margin-top:1em;
-    border-top:1px solid #ddd;
     .xitem {
       position:relative;
       cursor:pointer;
       text-align:left;
       border-bottom:1px solid #ddd;
+      font-size:1.25em;
+      padding-left:.15em;
+      .fa-angle-right {
+        color:#ccc;
+      }
     }
   }
 
@@ -120,6 +127,7 @@
     background-color:#444;//00c176;
     color:#fff;
     border:none;
+    padding-top:3em;
     .grade {
       color:#fff;
     }
@@ -237,14 +245,19 @@
   .fa-angle-left {
     color:#222;
     float:left;
-    padding:.5em;
+    padding:.35em 0;
+    font-size:1.5em;
+    position:absolute;
+    top:.5em;
+    left:.5em;
   }
 
   .fa-angle-right {
     float:right;
     color:#222;
-    margin-top:-1.15em;
+    margin-top:-1.25em;
     padding-right:0;
+    cursor:pointer;
   }
 
   .fa-angle-down {

@@ -1,13 +1,13 @@
-<div id="federal" ng-init="xstate.messages=''">
-  <div style="position:relative;" class="{{xstate.party}}">
-    <div class="fa fa-1x fa-angle-left" style="position:absolute;left:.5em;top:.1em;font-weight:bold;color:{{xstate.party==='prd'? '#000': '#fff'}};"></div>
-    <div style="cursor:pointer;width:100%;text-align:center;position:relative;font-size:1.25em;line-height:1.25em;padding:.25em 0;font-weight:bold;" ng-click="viewGov(xstate.id)" class="xstate-head">{{xstate.name}}</div>
+<div id="federal" ng-init="xcolor=xstate.party==='prd'? '#000': '#fff'">
+  <div style="position:relative;" class="xstate-header {{xstate.party}}">
+    <div class="fa fa-1x fa-angle-left" style="position:absolute;left:.5em;top:.1em;font-weight:bold;color:{{xcolor}};"></div>
+    <div style="cursor:pointer;width:100%;text-align:center;position:relative;font-size:1.25em;line-height:1.25em;padding:.25em 0;font-weight:bold;font-family: 'Comfortaa', cursive;letter-spacing:1px;" ng-click="viewGov(xstate.id)" class="xstate-head">{{xstate.name}}</div>
   </div>
-  <div style="height:{{windowHeight-31}}px;">
+  <div style="height:{{windowHeight-40}}px;">
     <ul class="submenu" style="background-color:#fff;margin:0;padding:1em 0 0 0;">
       <div class="xstate" style="margin:0;padding:0;text-align:center;padding-top:1em;">
         <div>
-          <img src="assets/images/{{xstate.party}}.png" style="width:3.25em;">
+          <img src="assets/images/{{xstate.party}}.png" style="width:3.5em;">
         </div>
         <div class="vato" style="color:#333;padding-top:.25em;">{{xstate.vato}}</div>
         <div style="color:#bbb">{{xstate.period}}</div>
@@ -18,26 +18,26 @@
         </div>
 
         <div class="xitems">
-          <div class="xitem" ui-sref="xsuggestions({xstate: xstate.uid})">
+          <div class="xitem {{xstate.party}}" ui-sref="xsuggestions({xstate: xstate.uid})">
             <div style="padding:.5em;">Sugerencias</div>
-            <div class="fa fa-1x fa-angle-right" style="margin-top:-1.65em;padding-right:.5em;"></div>
-            <div style="position:absolute;right:2em;top:.5em;color:#444;">0</div>
+            <div class="fa fa-1x fa-angle-right" style="margin-top:-1.65em;padding-right:.5em;color:{{xcolor}};"></div>
+            <div style="position:absolute;right:2em;top:.5em;color:{{xcolor}};">0</div>
           </div>
-          <div class="xitem" ui-sref="xcomplaints({xstate: xstate.uid})">
+          <div class="xitem {{xstate.party}}" ui-sref="xcomplaints({xstate: xstate.uid})">
             <div style="padding:.5em;">Quejas</div>
-            <div class="fa fa-1x fa-angle-right" style="margin-top:-1.65em;padding-right:.5em;"></div>
-            <div style="position:absolute;right:2em;top:.5em;color:#444;">0</div>
+            <div class="fa fa-1x fa-angle-right" style="margin-top:-1.65em;padding-right:.5em;color:{{xcolor}};"></div>
+            <div style="position:absolute;right:2em;top:.5em;color:{{xcolor}};">0</div>
           </div>
-          <div class="xitem" ui-sref="xforums({xstate: xstate.uid})">
+          <div class="xitem {{xstate.party}}" ui-sref="xforums({xstate: xstate.uid})">
             <div style="padding:.5em;">Foros</div>
-            <div class="fa fa-1x fa-angle-right" style="margin-top:-1.65em;padding-right:.5em;"></div>
-            <div style="position:absolute;right:2em;top:.5em;color:#444;">0</div>
+            <div class="fa fa-1x fa-angle-right" style="margin-top:-1.65em;padding-right:.5em;color:{{xcolor}};"></div>
+            <div style="position:absolute;right:2em;top:.5em;color:{{xcolor}};">0</div>
           </div>
-          <div class="xitem" ui-sref="xmunicipios({xstate: xstate.uid})">
+          <div ng-if="xstate.id>0" class="xitem {{xstate.party}}" ui-sref="xmunicipios({xstate: xstate.uid})">
             <div ng-hide="xstate.id===32" ng-click="" style="padding:.5em;">Municipios</div>
             <div ng-show="xstate.id===32" ng-click="" style="padding:.5em;">Delegaciones</div>
-            <div class="fa fa-1x fa-angle-right" style="margin-top:-1.65em;padding-right:.5em;"></div>
-            <div style="position:absolute;right:2em;top:.5em;color:#444;">0</div>
+            <div class="fa fa-1x fa-angle-right" style="margin-top:-1.65em;padding-right:.5em;color:{{xcolor}};"></div>
+            <div style="position:absolute;right:2em;top:.5em;color:{{xcolor}};">0</div>
           </div>
         </div>
       </div>
