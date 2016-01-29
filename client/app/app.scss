@@ -44,8 +44,39 @@
    background: linear-gradient($direction, $color-stops);
  }
 
+ .btn-xlarge {
+     padding: 18px 28px;
+     font-size: 22px; //change this to your desired size
+     line-height: normal;
+     width:80%;
+     -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+             border-radius: 8px;
+     background-color: #fff !important;
+     color:#000 !important;
+ }
+
  body {
    font-family: 'Source Sans Pro', sans-serif;
+   margin:0;   
+   height:100%;
+
+   .toplinks {
+     height:3em;
+     background-color:#fb4f04;//191919;
+     position:fixed;
+     top:0;
+     left:0;
+     width:100%;
+
+     .links {
+       max-width:800px;
+       margin:0 auto;
+       ul {
+        color:#000;
+       }
+     }
+   }
  }
 
  .top-line {
@@ -54,6 +85,10 @@
  }
 
  #app {
+   max-width:800px;
+   margin:0 auto;
+   text-align:center;
+   position:relative;
    ul {
      list-style-type: none;
      li {
