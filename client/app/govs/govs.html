@@ -11,7 +11,9 @@
   </div> -->
   <ul class="govs accordion" style="padding:0;margin:0;">
     <li id="gov{{state.id}}" ng-repeat="state in states" class="js-accordion-trigger">
-      <div style="cursor:pointer;" ng-click="loadState(state.id)" ng-hide="govSelected === state.id"><img src="assets/images/{{state.party}}.png"> {{state.name}}</div>
+      <div style="cursor:pointer;" ng-click="loadState(state.id)" ng-hide="govSelected === state.id">
+        <img ng-src="assets/images/{{state.party}}.png"> {{state.name}}
+      </div>
       <div class="fa fa-1x fa-angle-right" ng-click="loadState(state.id)"></div>
     </li>
   </ul>
