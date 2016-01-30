@@ -20,6 +20,6 @@ angular.module('xApp', [
     $urlRouterProvider
         .otherwise('/');
 
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true).hashPrefix('!');
   }
 ]);
