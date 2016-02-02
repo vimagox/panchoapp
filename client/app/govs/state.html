@@ -1,43 +1,84 @@
 <div id="federal" ng-init="xcolor=xstate.party==='prd'? '#000': '#fff'">
-  <div style="position:relative;" class="xstate-header {{xstate.party}}">
-    <div class="fa fa-1x fa-angle-left" style="position:absolute;left:.5em;top:.1em;font-weight:bold;color:{{xcolor}};"></div>
-    <div style="cursor:pointer;width:100%;text-align:center;position:relative;font-size:1.25em;line-height:1.25em;padding:.25em 0;font-weight:bold;font-family: 'Comfortaa', cursive;letter-spacing:1px;" ng-click="viewGov(xstate.id)" class="xstate-head">{{xstate.name}}</div>
+  <div class="xstate-header {{xstate.party}}" style="display:block;xpadding-top:3.5em;height:4em;">
+    <i class="fa fa-1x fa-angle-left" ui-sref="govs" style="position:absolute;left:0;top:.2em;font-weight:bold;color:#fff;line-height:1.75em;xborder:1px solid white;z-index:100;padding:5px 15px;"></i>
+    <div style="cursor:pointer;width:100%;text-align:center;position:relative;font-size:1.5em;line-height:2.1em;padding:0;xfont-weight:bold;xfont-family: 'Comfortaa', cursive;letter-spacing:1px;" class="xstate-head">{{xstate.name}}</div>
   </div>
+
   <div style="height:{{windowHeight-40}}px;">
     <ul class="submenu" style="background-color:#fff;margin:0;padding:1em 0 0 0;">
       <div class="xstate" style="margin:0;padding:0;text-align:center;padding-top:1em;">
         <div>
-          <img src="assets/images/{{xstate.party}}.png" style="width:3.5em;">
+          <div ng-if="xstate.party==='pri'"><img src="assets/images/pri.png" style="height:6em;"></div>
+          <div ng-if="xstate.party==='pan'"><img src="assets/images/pan.png" style="width:6em;"></div>
+          <div ng-if="xstate.party==='prd'"><img src="assets/images/prd.png" style="width:6em;"></div>
+          <div ng-if="xstate.party==='pop'"><img src="assets/images/pop.png" style="width:6em;"></div>
+          <div ng-if="xstate.party==='ind'"><img src="assets/images/ind.png" style="width:6em;"></div>
+          <div ng-if="xstate.party==='pvem'"><img src="assets/images/pvem.png" style="width:6em;"></div>
         </div>
         <div class="vato" style="color:#333;padding-top:.25em;">{{xstate.vato}}</div>
         <div style="color:#bbb">{{xstate.period}}</div>
 
-        <div ng-hide="xstate.messages.length>0" class="xgrade" style="margin:1.25em 2.5em 0 2.5em;background-color:#fff;color:#999;font-size:1em;">
-          <div class="xavg" style="text-align:center;color:#444;">0.0</div>
-          <div class="panchos"><b>0</b><br>Panchos</div>
-        </div>
-
-        <div class="xitems">
-          <div class="xitem {{xstate.party}}" ui-sref="xsuggestions({xstate: xstate.uid})">
-            <div style="padding:.5em;">Sugerencias</div>
-            <div class="fa fa-1x fa-angle-right" style="margin-top:-1.65em;padding-right:.5em;color:{{xcolor}};"></div>
-            <div style="position:absolute;right:2em;top:.5em;color:{{xcolor}};">0</div>
+        <div class="xbuttons" ng-init="score=false">
+          <div ng-hide="score" class="xitem" style="background-color:#000;color:#fff;position:relative;">
+            <div style="padding:.5em;margin-left:.75em;cursor:pointer;" ng-click="score=true">Calificacion</div>
+            <i ng-click="score=true" class="fa fa-caret-right fa-2x" style="position:absolute;left:.35em;top:.4em;"></i>
+            <div style="position:absolute;right:.3em;top:.1em;color:{{xcolor}};font-size:2em;">0.0</div>
           </div>
-          <div class="xitem {{xstate.party}}" ui-sref="xcomplaints({xstate: xstate.uid})">
-            <div style="padding:.5em;">Quejas</div>
-            <div class="fa fa-1x fa-angle-right" style="margin-top:-1.65em;padding-right:.5em;color:{{xcolor}};"></div>
-            <div style="position:absolute;right:2em;top:.5em;color:{{xcolor}};">0</div>
+          <div ng-show="score && !myscore" class="xitem" style="background-color:#000;color:#fff;position:relative;height:21.35em;">
+            <i ng-click="score=false" class="fa fa-caret-down fa-2x" style="position:absolute;left:.35em;top:.4em;"></i>
+            <div style="padding:.5em;margin-left:1.25em;cursor:pointer;" ng-click="score=false">Calificacion Promedio</div>
+            <div style="height:14.5em;overflow:hidden;padding-top:1em;">
+              <div style="text-align:center;color:{{xcolor}};font-size:6em;">0.0</div>
+              <div class="xgrade" style="margin:-1em 2.5em 1em 2.5em;color:#999;font-size:1em;background-color:#000;">
+                <div class="panchos"><b>0</b></div>
+                <div><span style="padding-top:1.5em;font-family:'Comfortaa', cursive;">panchos<span></div>
+              </div>
+            </div>
+            <div style="text-align:center;">
+              <a ng-click="myscore=true" class="btn btn-xlarge" style="width:96%;">Mi Calificacion</a>
+            </div>
           </div>
-          <div class="xitem {{xstate.party}}" ui-sref="xforums({xstate: xstate.uid})">
-            <div style="padding:.5em;">Foros</div>
-            <div class="fa fa-1x fa-angle-right" style="margin-top:-1.65em;padding-right:.5em;color:{{xcolor}};"></div>
-            <div style="position:absolute;right:2em;top:.5em;color:{{xcolor}};">0</div>
+          <div ng-show="myscore" class="xitem myscore" style="background-color:#000;color:#fff;position:relative;height:21.35em;">
+            <div style="padding:0 .5em;text-align:center" ng-click="score=false">Mi Calificacion</div>
+            <div ng-init="xscore=-1" style="height:17em;overflow:hidden;padding:0 .75em;">
+              <table>
+                <tr ng-click="xscore=10" ng-class="{active: xscore===10}"><td>Excelente</td><td>10</td><td><i class="fa fa-check" ng-class="{active: xscore===10}"></i></td></tr>
+                <tr ng-click="xscore=9" ng-class="{active: xscore===9}"><td>Muy Bien</td><td>9</td><td><i class="fa fa-check"  ng-click="xscore=9" ng-class="{active: xscore===9}"></i></td></tr>
+                <tr ng-click="xscore=8" ng-class="{active: xscore===8}"><td>Bien</td><td>8</td><td><i class="fa fa-check"  ng-click="xscore=8" ng-class="{active: xscore===8}"></i></td></tr>
+                <tr ng-click="xscore=7" ng-class="{active: xscore===7}"><td>Regular</td><td>7</td><td><i class="fa fa-check" ng-click="xscore=7" ng-class="{active: xscore===7}"></i></td></tr>
+                <tr ng-click="xscore=6" ng-class="{active: xscore===6}"><td>Aceptable</td><td>6</td><td><i class="fa fa-check" ng-click="xscore=6" ng-class="{active: xscore===6}"></i></td></tr>
+                <tr ng-click="xscore=5" ng-class="{active: xscore===5}"><td>Mal</td><td>5</td><td><i class="fa fa-check" ng-click="xscore=5" ng-class="{active: xscore===5}"></i></td></tr>
+                <tr ng-click="xscore=4" ng-class="{active: xscore===4}"><td>Muy Mal</td><td>4</td><td><i class="fa fa-check" ng-click="xscore=4" ng-class="{active: xscore===4}"></i></td></tr>
+                <tr ng-click="xscore=3" ng-class="{active: xscore===3}"><td>Pa' La Chingada</td><td>3</td><td><i class="fa fa-check" ng-click="xscore=3" ng-class="{active: xscore===3}"></i></td></tr>
+                <tr ng-click="xscore=2" ng-class="{active: xscore===2}"><td>Vale Madre</td><td>2</td><td><i class="fa fa-check" ng-click="xscore=2" ng-class="{active: xscore===2}"></i></td></tr>
+                <tr ng-click="xscore=1" ng-class="{active: xscore===1}"><td>Ratas Corruptos</td><td>1</td><td><i class="fa fa-check" ng-click="xscore=1" ng-class="{active: xscore===1}"></i></td></tr>
+              </table>
+            </div>
+            <div>
+              <div class="col-xs-6 pull-left"><a class="btn" ng-click="myscore=false">Cancelar</a></div>
+              <div class="col-xs-6 pull-right"><a class="btn btn-default" ng-click="myscore=false">Calificar</a></div>
+            </div>
           </div>
-          <div ng-if="xstate.id>0" class="xitem {{xstate.party}}" ui-sref="xmunicipios({xstate: xstate.uid})">
-            <div ng-hide="xstate.id===32" ng-click="" style="padding:.5em;">Municipios</div>
-            <div ng-show="xstate.id===32" ng-click="" style="padding:.5em;">Delegaciones</div>
-            <div class="fa fa-1x fa-angle-right" style="margin-top:-1.65em;padding-right:.5em;color:{{xcolor}};"></div>
-            <div style="position:absolute;right:2em;top:.5em;color:{{xcolor}};">0</div>
+          <div ng-hide="score" class="xitem {{xstate.party}}" ui-sref="xsuggestions({xstate: xstate.uid})">
+            <div style="padding:.5em;margin-left:.75em;">Sugerencias</div>
+            <i class="fa fa-caret-right fa-2x" style="position:absolute;left:.35em;top:.4em;"></i>
+            <div style="position:absolute;right:1em;top:1em;color:{{xcolor}};">0</div>
+          </div>
+          <div ng-hide="score" class="xitem {{xstate.party}}" ui-sref="xcomplaints({xstate: xstate.uid})">
+            <div style="padding:.5em;margin-left:.75em;">Quejas</div>
+            <i class="fa fa-caret-right fa-2x" style="position:absolute;left:.35em;top:.4em;"></i>
+            <div style="position:absolute;right:1em;top:1em;color:{{xcolor}};">0</div>
+          </div>
+          <div ng-hide="score" class="xitem {{xstate.party}}" ui-sref="xforums({xstate: xstate.uid})">
+            <div style="padding:.5em;margin-left:.75em;">Foros</div>
+            <i class="fa fa-caret-right fa-2x" style="position:absolute;left:.35em;top:.4em;"></i>
+            <div style="position:absolute;right:1em;top:1em;color:{{xcolor}};">0</div>
+          </div>
+          <div ng-hide="score" ng-if="xstate.id>0" class="xitem" style="background-color:#444;color:#fff;" ui-sref="xmunicipios({xstate: xstate.uid})">
+            <div ng-hide="xstate.id===32" ng-click="" style="padding:.5em;margin-left:.75em;">Municipios</div>
+            <div ng-show="xstate.id===32" ng-click="" style="padding:.5em;margin-left:.75em;">Delegaciones</div>
+            <i class="fa fa-caret-right fa-2x" style="position:absolute;left:.35em;top:.4em;"></i>
+            <div style="position:absolute;right:1em;top:1em;color:#fff;">0</div>
           </div>
         </div>
       </div>

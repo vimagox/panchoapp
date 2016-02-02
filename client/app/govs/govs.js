@@ -131,18 +131,14 @@ angular.module('xApp.govs', ['ui.router'])
 .controller('StateCtrl', ['$scope', '$state', 'xStorage', '$stateParams',
   function ($scope, $state, xStorage, $stateParams) {
     $scope.xstate = xStorage.get('xstate');
-
-    $scope.viewGov = function(stateId) {
-      // angular.element('#gov'+stateId).find('.submenu').slideToggle('fast');
-      // angular.element('#gov'+stateId).toggleClass('is-expanded');
-      $state.go('govs');
-      $scope.gotoAnchor('gov'+stateId);
-    }
   }
 ])
 .controller('XSuggestionsCtrl', ['$scope', '$state', 'xStorage',
   function ($scope, $state, xStorage) {
     $scope.xstate = xStorage.get('xstate');
+    $scope.back = function() {
+      $state.go('xstate', {xstate: x.uid})
+    }
   }
 ])
 .controller('XComplaintsCtrl', ['$scope', '$state', 'xStorage',

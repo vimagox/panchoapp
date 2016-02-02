@@ -1,10 +1,11 @@
 <div id="federal" ng-init="xstate.messages=''">
-  <div style="position:relative;padding:.4em 0;" class="{{xstate.party}}">
-    <div style="cursor:pointer;width:100%;text-align:center;position:relative;font-size:1.25em;line-height:1.25em;padding:.25em 0;font-weight:bold;font-family: 'Comfortaa', cursive;letter-spacing:1px;" ng-click="viewGov(xstate.id)" class="xstate-head">{{xstate.name}}</div>
+  <div class="xstate-header {{xstate.party}}" style="display:block;xpadding-top:3.5em;height:4em;">
+    <i class="fa fa-1x fa-angle-left" ui-sref="xstate({xstate:xstate.uid})" style="position:absolute;left:0;top:.2em;font-weight:bold;color:#fff;line-height:1.75em;xborder:1px solid white;z-index:100;padding:5px 15px;"></i>
+    <div style="cursor:pointer;width:100%;text-align:center;position:relative;font-size:1.5em;line-height:2.1em;padding:0;xfont-weight:bold;xfont-family: 'Comfortaa', cursive;letter-spacing:1px;" class="xstate-head">{{xstate.name}}</div>
   </div>
-  <div ui-sref="xstate({xstate:xstate.uid})" style="position:relative;background-color:#191919;color:#fff;padding:.5em 0;">
-    <div class="fa fa-1x fa-angle-left" style="position:absolute;left:.5em;top:.2em;font-weight:bold;color:#fff;"></div>
-    <div style="cursor:pointer;width:100%;text-align:center;position:relative;font-size:1.25em;line-height:1.25em;padding:.25em 0;" ng-click="viewGov(xstate.id)" class="xstate-head">Sugerencias</div>
+  
+  <div style="position:relative;background-color:#191919;color:#fff;padding:.5em 0;">
+    <div style="cursor:pointer;width:100%;text-align:center;position:relative;font-size:1.25em;font-family: 'Comfortaa', cursive;line-height:1.25em;padding:.25em 0;" class="xstate-head">Sugerencias</div>
   </div>
   <div style="height:{{windowHeight-40}}px;">
     <ul class="submenu" style="background-color:#fff;margin:0;padding:1em 0 0 0;">
