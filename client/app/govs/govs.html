@@ -3,12 +3,6 @@
     <a ng-click="simon=true" style="color:white;text-decoration:none;cursor:pointer;"><span>pancho</span></a>
     <i class="fa fa-bars fa-1x" ng-click="govsmenu=!govsmenu"></i>
   </div>
-  <!-- <div ng-show="govsmenu" class="govs-header-menu" style="width:100%;background-color:#080808;">
-  </div>
-  <div ng-hide="govsmenu" class="govs-subheader" style="xmargin-top:3em;height:3em;display:block;">
-    <div style="float:left;margin-left:.6em;">GOBIERNOS</div>
-    <div style="float:right;padding-right:.6em;">CALIFICACION</div>
-  </div> -->
   <ul class="govs accordion" style="padding:0;margin:0;">
     <li id="gov{{state.id}}" ng-repeat="state in states" class="js-accordion-trigger">
       <div style="cursor:pointer;" ng-click="loadState(state.id)" ng-hide="govSelected === state.id">
@@ -22,16 +16,3 @@
     </li>
   </ul>
 </div>
-
-
-<!-- <div style="height:{{windowHeight}}px;background-color:#111;color:#fff;"> -->
-  <!-- <h3 style="font-family: 'Comfortaa', cursive;color:#fff;">pancho.mx</h3>
-  <div style="padding-top:.25em;text-align:center;margin:0 auto;">
-    <p style="border-bottom:1px solid #fff;width:10em;text-align:center;">Registrate y participa:<p>
-    <div class="xidea"><i class="fa fa-circle"/>Evalua tus Gobiernos.</div>
-    <div class="xidea"><i class="fa fa-circle"/>Apoya Sugerencias a tu gobierno.</div>
-    <div class="xidea"><i class="fa fa-circle"/>Opina en temas relevantes a tu comunidad.</div>
-    <br><br>
-    <p>Envianos tus ideas ó sugerencias para mejorar nuestro servicio.</p>
-  </div> -->
-<!-- </div> -->

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('xApp.app', ['ui.router'])
+angular.module('xApp.root', ['ui.router'])
 .config(['$stateProvider', function($stateProvider) {
   $stateProvider
     .state('app', {
@@ -12,6 +12,7 @@ angular.module('xApp.app', ['ui.router'])
 }])
 .controller('AppCtrl', ['$scope', '$state', '$location', '$window', '$anchorScroll',
   function ($scope, $state, $location, $window, $anchorScroll) {
+    console.log('simona....');
     $scope.location = $location;
     $scope.date = new Date();
     $scope.settings = {borderColor:''};

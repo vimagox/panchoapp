@@ -1,0 +1,28 @@
+<div id="app" ng-init="simon=false" ng-hide="simon">
+  <div class="toplinks hidden-xs">
+    <div class="links">
+      <ul>
+        <li>Login</li>
+        <li ng-click="simon=true">Gobiernos</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="xbanner" ng-click="simon=true">
+    <header id="banner">
+      <div class="xcontainer" style="text-align:center;margin:0;padding:0;padding:.5em 0;">
+        <img class="pancho" src="assets/images/panchox.png" alt="Pancho"/>
+        <h1 style="color:#000;f0f5f9;margin:0;padding:0;width:100%;font-family: 'Comfortaa', cursive;">pancho</h1>
+        <div class="xslogan">
+          <p class="lead" style="font-size:1em;padding-top:.5em;margin-bottom:0;line-height:1.5em;color:#fff;2a2a2a;letter-spacing:2px;margin:-1.1em 0 -1em 0;"> Espacio de Expresion</p><br>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div class="visible-xs" style="width:100%;">
+    <a class="btn btn-xlarge" style="width:80%;" ng-click="simon=true">Evalua tu Gobierno</a>
+    <a class="btn btn-xlarge" style="width:80%;margin-top:1em;">Login</a>
+  </div>
+</div>
+<div ng-show="simon" ui-view="" style="max-width:800px;margin:0 auto;border-left-radius:6px;border-right-radius:6px;"></div>

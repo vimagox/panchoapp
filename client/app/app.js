@@ -1,19 +1,11 @@
 'use strict';
 
 angular.module('xApp', [
-    'xApp.storage',
-    'xApp.app',
-    'xApp.main',
-    // 'xApp.home',
-    'xApp.govs',
-    'xApp.forums',
-    'xApp.stats',
-    'xApp.suggestions',
-    'xApp.constants',
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ui.router'
+    'ui.router',
+    'pancho'
 ])
 .config(['$urlRouterProvider', '$locationProvider',
   function($urlRouterProvider, $locationProvider) {
@@ -23,3 +15,9 @@ angular.module('xApp', [
     $locationProvider.html5Mode(true).hashPrefix('!');
   }
 ]);
+
+// 'ui.bootstrap',
+// 'angularMoment',
+// 'pageslide-directive',
+// 'btford.socket-io',
+// 'ngTouch',
